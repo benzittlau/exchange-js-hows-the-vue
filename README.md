@@ -112,6 +112,8 @@ Alternatively you can use the [decktape](https://github.com/astefanutti/decktape
 - **plugin/** Components that have been developed as extensions to reveal.js
 - **lib/** All other third party assets (JavaScript, CSS, fonts)
 
+## Hosting
+The project is configured to be hostable on heroku out of the box, simply push to a heroku application.
 
 ## License
 
