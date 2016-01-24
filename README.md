@@ -115,6 +115,11 @@ Alternatively you can use the [decktape](https://github.com/astefanutti/decktape
 ## Hosting
 The project is configured to be hostable on heroku out of the box, simply push to a heroku application.
 
+```sh
+$ heroku apps:create <appname>
+$ git push heroku
+```
+
 ## License
 
 MIT licensed
