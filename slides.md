@@ -20,6 +20,12 @@
 
 
 
+# Sample image slide
+![Glenfarclas](img/glenfarclas.jpg)
+
+
+
+
 # LETS CACHE!
 ## DEMO PROJECT
 
