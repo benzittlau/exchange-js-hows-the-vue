@@ -99,3 +99,6 @@ There are many strategies to invalid cache
 
 "Time To Live" is a quick and easy one
 
+## Resources
+
+* [Switching From React To Vue.js](http://vuejsdevelopers.com/2017/05/28/switch-from-react-to-vue-js/)
