@@ -290,15 +290,124 @@ export default Component.extend({
 })
 </code></pre>
           </section>
+        </section>
+        <section>
           <section>
             <h3>And you put them all together...</h3>
+<pre><code data-trim class='html'>
+<!--FilteredList.vue Component file-->
+<template>
+  <div>
+    <h2>{{ title }}</h2>
+    <ul class="unbulleted">
+      <li v-for="person of filteredPeople">
+        {{ person.name }} - {{ person.role }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+module.exports = {
+  template: '#filterable-list-template',
+  props: {
+    filter: String
+  },
+  data: function() {
+    return {
+      title: 'Exchange.js June 2017 People List',
+      people: [
+        {name: 'Mark Bennett', role: 'Organizer'},
+        {name: 'Ben Zittlau', role: 'Speaker'},
+        {name: 'Yuan Ji', role: 'Speaker'},
+        {name: 'Sean Healy', role: 'Attendee'},
+        {name: 'Abram Hindle', role: 'Attendee'},
+      ]
+    }
+  },
+  computed: {
+    filteredPeople: function() {
+      if (this.filter === 'all') {
+        return this.people
+      }
+
+      var vm = this;
+      return this.people.filter(function(person) {
+        return person.role === vm.filter
+      })
+    }
+  }
+}
+</script>
+</code></pre>
+          </section>
+          <section>
+            <h4>Component's Are Vue Instances</h4>
+<pre><code data-trim class='js'>
+<!--Vue Component-->
+Vue.component('component-name', {
+  template: ...,
+  data: {
+    ...
+  }
+})
+</code></pre>
+<pre><code data-trim class='js'>
+<!--Vue App-->
+new Vue({
+  el: ...,
+  template: ...,
+  data: {
+    ...
+  }
+})
+</code></pre>
+          </section>
+          <section>
+            <h3>Demo</h3>
             <img src="img/people_list.png" />
             <p><a href="https://codepen.io/benzittlau/pen/pPMBdL?editors=1010">Mini Vue.js App</a></p>
           </section>
         </section>
         <section>
           <section>
+            <h3>Building out a full SPA</h3>
+          </section>
+          <section>
+            <h3>State Management (Vuex)</h3>
+            <img src="img/vuex.png" alt="">
+          </section>
+          <section>
+            <h3>Routing (vue-router)</h3>
+<pre><code data-trim class='js'>
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+]
+
+const router = new VueRouter({
+  routes // short for routes: routes
+})
+
+const app = new Vue({
+  router
+}).$mount('#app')
+</code></pre>
+
+          </section>
+        </section>
+        <section>
+          <section>
             <h3>Closing out</h3>
+          </section>
+          <section>
+            <h3>Popularity contest</h3>
+            <ul class="list--no-bullets">
+              <li><img class="no-margin" src="img/react_social_proof.png" alt=""><span class="fragment" data-fragment-index="1">React</span></li>
+              <li><img class="no-margin" src="img/vue_social_proof.png" alt=""><span class="fragment" data-fragment-index="1">Vue</span></li>
+              <li><img class="no-margin" src="img/angular_social_proof.png" alt=""><span class="fragment" data-fragment-index="1">Angular</span></li>
+              <li><img class="no-margin" src="img/ember_social_proof.png" alt=""><span class="fragment" data-fragment-index="1">Ember</span></li>
+            </ul>
           </section>
           <section>
             <h3>Some Thoughts</h3>

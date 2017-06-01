@@ -12,3 +12,6 @@
 
 .reveal ul.padded {
   padding-bottom: 30px; }
+
+img.no-margin {
+  margin: 0 !important; }
