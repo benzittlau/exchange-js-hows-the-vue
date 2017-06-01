@@ -9,3 +9,6 @@
 
 .reveal ul.list--no-bullets {
   list-style: none; }
+
+.reveal ul.padded {
+  padding-bottom: 30px; }
